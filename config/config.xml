@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Hexx>
+    <MountPoint>Z:/</MountPoint>
+    <BackupDirectory>F:/</BackupDirectory>
+    <MetadataDirectory>metadata</MetadataDirectory>
+    <ScanDirectories>
+        <Directory>audio</Directory>
+        <Directory>documentaries</Directory>
+        <Directory>features</Directory>
+        <Directory>series</Directory>
+        <Directory>documents</Directory>
+    </ScanDirectories>
+</Hexx>
