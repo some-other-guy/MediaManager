@@ -4,6 +4,7 @@
 #include "logger/logger.h"
 #include "renamer/renamer.h"
 #include "manifest/mainfest.h"
+#include "folder_prep/folder_prep.h"
 #include "media_manager/media_manager.h"
 
 const std::string MediaManager::LOGGER_NAME( "MediaManagerLogger" );
@@ -19,7 +20,7 @@ MediaManager::MediaManager( int argc, char** argv, std::string configfile ) :
     _logger( LOGGER_NAME ), _configuration( 0 )
 {
     _options_map[OPTION_QUIT] = boost::bind( &MediaManager::quit, this );
-    _options_map[OPTION_PREP_FOLDER] = boost::bind( &MediaManager::file_rename, this );
+    _options_map[OPTION_FILE_RENAME] = boost::bind( &MediaManager::file_rename, this );
     _options_map[OPTION_PREP_FOLDER] = boost::bind( &MediaManager::prep_folder, this );
     _options_map[OPTION_DISPLAY_USAGE] = boost::bind( &MediaManager::display_usage, this );
     _options_map[OPTION_GENERATE_MANIFEST] = boost::bind( &MediaManager::generate_manifest, this );
@@ -58,12 +59,12 @@ void MediaManager::file_rename()
 
 void MediaManager::prep_folder()
 {
-
+    FolderPrep fp( _configuration );
 }
 
 void MediaManager::display_usage()
 {
-
+    std::cout << "MediaManager [option:arguments]" << std::endl;
 }
 
 void MediaManager::generate_manifest()

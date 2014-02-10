@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Hexx>
-    <MountPoint>Z:/</MountPoint>
+    <MountPoint>C:/Users/jim.maroulis/Documents/GitHub/MediaManager/test</MountPoint>
     <BackupDirectory>F:/</BackupDirectory>
     <MetadataDirectory>metadata</MetadataDirectory>
     <ScanDirectories>
