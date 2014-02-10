@@ -15,6 +15,7 @@ public:
     void parse_args( int argc, char** argv );
 
     void quit();
+    void backup();
     void file_rename();
     void prep_folder();
     void display_usage();
@@ -33,6 +34,7 @@ private:
     static const std::string LOGGER_NAME;
 
     static const std::string OPTION_QUIT;
+    static const std::string OPTION_BACKUP;
     static const std::string OPTION_FILE_RENAME;
     static const std::string OPTION_PREP_FOLDER;
     static const std::string OPTION_DISPLAY_USAGE;

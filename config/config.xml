@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Hexx>
-    <MountPoint>C:/Users/jim.maroulis/Documents/GitHub/MediaManager/test</MountPoint>
-    <BackupDirectory>F:/</BackupDirectory>
+    <MountPoint>C:/Users/jim.maroulis/Dropbox/SFML-1.6</MountPoint>
+    <BackupDirectory>C:/Users/jim.maroulis/Desktop/Backup</BackupDirectory>
     <MetadataDirectory>metadata</MetadataDirectory>
     <ScanDirectories>
-        <Directory>audio</Directory>
-        <Directory>documentaries</Directory>
-        <Directory>features</Directory>
-        <Directory>series</Directory>
-        <Directory>documents</Directory>
+        <Directory>src</Directory>
+        <Directory>samples</Directory>
+        <Directory>include</Directory>
     </ScanDirectories>
+    <FileTypes>
+        <Extention>.h</Extention>
+        <Extention>.hpp</Extention>
+        <Extention>.cpp</Extention>
+    </FileTypes>
 </Hexx>

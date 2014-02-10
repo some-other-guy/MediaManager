@@ -2,6 +2,7 @@
 #include <iostream>
 #include <boost/bind.hpp>
 #include "logger/logger.h"
+#include "backup/backup.h"
 #include "renamer/renamer.h"
 #include "manifest/mainfest.h"
 #include "folder_prep/folder_prep.h"
@@ -10,6 +11,7 @@
 const std::string MediaManager::LOGGER_NAME( "MediaManagerLogger" );
 
 const std::string MediaManager::OPTION_QUIT( "-q" );
+const std::string MediaManager::OPTION_BACKUP( "-b" );
 const std::string MediaManager::OPTION_FILE_RENAME( "-r" );
 const std::string MediaManager::OPTION_PREP_FOLDER( "-p" );
 const std::string MediaManager::OPTION_DISPLAY_USAGE( "-h" );
@@ -20,6 +22,7 @@ MediaManager::MediaManager( int argc, char** argv, std::string configfile ) :
     _logger( LOGGER_NAME ), _configuration( 0 )
 {
     _options_map[OPTION_QUIT] = boost::bind( &MediaManager::quit, this );
+    _options_map[OPTION_BACKUP] = boost::bind( &MediaManager::backup, this );
     _options_map[OPTION_FILE_RENAME] = boost::bind( &MediaManager::file_rename, this );
     _options_map[OPTION_PREP_FOLDER] = boost::bind( &MediaManager::prep_folder, this );
     _options_map[OPTION_DISPLAY_USAGE] = boost::bind( &MediaManager::display_usage, this );
@@ -49,6 +52,11 @@ void MediaManager::parse_args( int argc, char** argv )
 void MediaManager::quit()
 {
     _logger.log( "Thanks for playing" );
+}
+
+void MediaManager::backup()
+{
+    Backup backup( _configuration );
 }
 
 void MediaManager::file_rename()
@@ -86,4 +94,3 @@ void MediaManager::display_main_menu()
     if( _options_map.end() != _options_map.find( user_response))
         ( _options_map[user_response] )();
 }
-

@@ -137,3 +137,22 @@ void XmlFileHdlr::iterate_ptree( std::string root_tag )
         }
     }
 }
+
+bool XmlFileHdlr::has_key( std::string key )
+{
+    bool found = false;
+    if( _items.end() != _items.find( key ))
+        found = true;
+    return found;
+}
+
+bool XmlFileHdlr::has_value( std::string key, std::string value )
+{
+    bool found = false;
+    if( has_key( key ))
+    {
+        if( _items[key].end() != std::find( _items[key].begin(), _items[key].end(), value ))
+            found = true;
+    }
+    return found;
+}

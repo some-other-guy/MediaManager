@@ -27,6 +27,9 @@ public:
     virtual void add( std::string& value );
     virtual void add( std::string& value, std::string& tag );
 
+    virtual bool has_key( std::string key );
+    virtual bool has_value( std::string key, std::string value );
+
 protected:
     Logger _logger;
     std::string _filename;

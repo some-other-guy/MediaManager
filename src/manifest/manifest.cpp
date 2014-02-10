@@ -67,8 +67,11 @@ void Manifest::scan_directory( std::string& subdir )
     {
         if( is_regular_file( dir_itr->path() ))
         {
-            std::string entry( dir_itr->path().string() );
-            add_to_manifest( entry );
+            if( _configuration->has_value( "Hexx.FileTypes.Extention", dir_itr->path().extension().string() ))
+            {
+                std::string entry( dir_itr->path().string() );
+                add_to_manifest( entry );
+            }
         }
         else
         {

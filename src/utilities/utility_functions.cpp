@@ -27,7 +27,7 @@ void Utility::get_user_input( std::string& msg, std::string& input )
     std::cin >> input;
 }
 
-void Utility::remove_root_string( std::string& str, std::string& remove_string )
+void Utility::remove_root_string( std::string& str, const std::string& remove_string )
 {
     if( !remove_string.empty() && str.npos != str.find( remove_string ))
     {

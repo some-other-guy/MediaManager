@@ -22,6 +22,10 @@ public:
 
     void add( std::string& value, std::string& tag );
 
+    bool has_key( std::string key );
+    bool has_value( std::string key, std::string value );
+
+
 protected:
     void load();
     void iterate_ptree( std::string root_tag );

@@ -14,8 +14,10 @@ void FileHdlr::add( std::string& value ){}
 void FileHdlr::set_root_tag( std::string& tag ){}
 void FileHdlr::add( std::string& value, std::string& tag ){}
 
+bool FileHdlr::has_key( std::string key ){ return false; }
 std::string FileHdlr::get_filename() const{ return _filename; }
 uint32_t FileHdlr::count_instances( std::string key ){ return 0; }
+bool FileHdlr::has_value( std::string key, std::string value ){ return false; }
 std::string FileHdlr::get_instance_value( std::string key, uint32_t instance){ return std::string( "" ); }
 
 FileHdlr* FileHdlrFactory::make_file_handler( std::string filename, uint32_t columns )
